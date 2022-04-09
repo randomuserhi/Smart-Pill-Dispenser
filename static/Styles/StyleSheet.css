@@ -1,0 +1,253 @@
+.AlertContainer
+{	
+	display: none;
+	justify-content: center;
+	align-items: center;
+
+	background-color: rgba(220, 220, 220, 0.5);
+	width:100%;
+	height:100%;
+	
+	position:absolute;
+	left:0px;
+	top:0px;
+	margin: 0px;
+}
+
+.AlertWrapper
+{
+	/*background-color: #FFFFFF;*/
+	width: 80%;
+	max-width: 100vw;
+	height: auto;
+}
+
+.AlertTitle
+{
+	background-color: #DDDDDD;
+	width:100%;
+	height:auto;
+	padding: 10px;
+	
+	transform: translate(-10px, -10px);
+	-webkit-transform: translate(-10px, -10px);
+	-ms-transform: translate(-10px, -10px);
+	
+	border-radius: 10px 10px 0px 0px;
+}
+
+.AlertContent
+{
+	background-color: #CCCCCC;
+	width:100%;
+	height:auto;
+	max-height: 500px;
+	overflow: auto;
+	padding: 10px;
+	
+	transform: translate(-10px, -10px);
+	-webkit-transform: translate(-10px, -10px);
+	-ms-transform: translate(-10px, -10px);
+}
+
+.AlertButtons
+{
+	background-color: #DDDDDD;
+	width:100%;
+	height:auto;
+	padding:10px;
+	
+	transform: translate(-10px, -10px);
+	-webkit-transform: translate(-10px, -10px);
+	-ms-transform: translate(-10px, -10px);
+	
+	border-radius: 0px 0px 10px 10px;
+}
+
+.AlertButton
+{
+	margin-right: 10px;
+}
+
+.Header
+{
+	width:100%;
+	height:auto;
+			
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	margin: 0px;
+			
+	padding-top:5px;
+	padding-bottom:5px;
+	
+	background-color:#A2BBFE;
+}
+
+.CanvasContainer
+{
+    display: flex;
+	justify-content: center;
+	align-items: center;
+
+    margin-top: 20px;
+	width:100%;
+	max-width: 800px;
+	Height:50%;
+}
+
+.Canvas
+{
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.custom_TimeStamp
+{
+    height: 200px;
+    width: 100%;
+    
+    display: table;
+}
+
+.custom_TimeStampRow
+{
+    height: 50px;
+    width: 100%;
+    
+    display: table-row;
+    background-color: #DDDDDD;
+}
+
+.custom_TimeStampCell
+{
+    height: 50px;
+    
+    padding: 5px;
+    
+    display: table-cell;
+    background-color: #EEEEEE;
+}
+
+.UnStyledDate::-webkit-inner-spin-button
+{
+    -webkit-appearance: none;
+}
+.UnStyledDate
+{
+    width:100%;
+}
+.UnStyledTime
+{
+    width:100%;
+}
+
+.Overview
+{
+    margin-top: 10px;
+    
+    width:100%;
+    height:auto;
+}
+
+.AlertBar
+{
+    width:95%;
+    height: auto;
+    min-height: 20px;
+    
+    margin-bottom: 10px;
+    
+    background-color: #b3b2ff;
+    padding: 5px;
+    padding-left:10px;
+    border-radius: 10px;
+}
+
+*
+{
+	font-size: 12pt;
+}
+@media only screen and (min-width:600px)
+{
+	*
+	{
+		font-size: 12pt;
+	}
+	
+	.AlertWrapper
+	{
+		/*background-color: #FFFFFF;*/
+		width: 80%;
+		max-width: 66vw;
+	}
+    
+    .CanvasContainer
+        {
+        width:100%;
+    }
+}
+@media only screen and (min-width:768px)
+{
+	*
+	{
+		font-size: 12pt;
+	}
+	
+	.AlertWrapper
+	{
+		/*background-color: #FFFFFF;*/
+		width: 70%;
+		max-width: 60vw;
+	}
+    
+    .CanvasContainer
+        {
+        width:50%;
+        height: 60%;
+        float: left;
+    }
+    
+    .Overview
+        {
+        float: right;
+        margin-top: 10px;
+        
+        width:48%;
+        height:auto;
+    }
+}
+
+@media only screen and (min-width:1000)
+{
+	*
+	{
+		font-size: 12pt;
+	}
+	
+	.AlertWrapper
+	{
+		/*background-color: #FFFFFF;*/
+		width: 70%;
+		max-width: 45vw;
+	}
+    
+    .CanvasContainer
+        {
+        float: left;
+        width:50%;
+        height:90%;
+    }
+    
+    .Overview
+        {
+        float: right;
+        margin-top: 10px;
+        
+        width:48%;
+        height:auto;
+    }
+}

@@ -1,0 +1,91 @@
+$def with ()
+<html>
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0">
+
+	<head>
+		<title>PillDispenser UI</title>
+		<link rel="icon" type="image/png" href="/static/favicon.ico">
+
+		<link rel="stylesheet" href="/static/Styles/StyleSheet.css"> <!-- CSS style sheet -->	
+        
+		<script src="/static/XmlRequest.js"></script> <!-- Request handling script -->
+		<script src="/static/Post.js"></script> <!-- ARQ handling script -->
+		<script src="/static/Preset.js"></script> <!-- Preset request functions -->
+		<script src="/static/Draw.js"></script> <!-- Draw functions -->
+		<script src="/static/Moment.js"></script> <!-- time functions -->
+		<script src="/static/Alert.js"></script> <!-- Alert functions -->	
+		
+        <script type="text/javascript">           
+        
+		//TODO::
+		//	- Show timestamps
+		//  - Show pills
+		//	- Show how many pills are left
+		//	- Enter how many slots are filled
+		//	- Allow callibration of Ultrasonic Sensor
+		//	- Say when you last missed your pill dose
+		//		- Show a histogram or something
+			
+        </script>		
+	</head>
+	
+    <body id="Body" onload="Post(); Initialise(); UpdateCSS();" onresize="UpdateCSS();">
+	<div style="width:100%; height:100%; overflow-y:auto;">
+		<div class="AlertContainer" id="AlertBox">
+			<div class="AlertWrapper">
+				<div class="AlertTitle" id="AlertTitle">
+					Your Pill Dispenser has not been setup yet
+				</div>
+				<div class="AlertContent" id="AlertContent">
+					Would you like to set up with default settings?
+				</div>
+				<div class="AlertButtons" id="AlertButtons">
+					<button class="AlertButton">yes</button>
+					<button class="AlertButton">No</button>
+				</div>
+			</div>
+		</div>
+		<div class="Header">
+			<div style="margin:5px;">
+				<div name="DispenserTime">
+				00:00:00
+				</div>
+				<div name="SystemTime">
+				00:00:00
+				</div>
+			</div>
+		</div>
+		
+		<div class="CanvasContainer">
+			<canvas class="Canvas" id="Display" width="800" height="1000">
+			</canvas>
+		</div>
+        
+        <div class="Overview">
+            <div class="AlertBar" id="TimeToNext"></div>
+            <div class="AlertBar" id="SetTimeStamps">
+                <div class='custom_TimeStamp' style='height:auto;' id='AddTimeStamp'>
+                    <div class='custom_TimeStampRow'>
+                        <div class='custom_TimeStampCell'>New Timestamp</div>
+                        <div class='custom_TimeStampCell'>
+                            <input type='time' class='UnStyledTime' id='TimeSetNew'/>
+                        </div>
+                        <div class='custom_TimeStampCell'>
+                            <button onclick="let ValidationTime = moment(document.getElementById('TimeSetNew').value, 'HH:mm'); if (ValidationTime.isValid()) {TimeStamps.push(document.getElementById('TimeSetNew').value); UpdateSetTimeStamps(TimeStamps.length - 1, true);}">Add</button>
+                            <button onclick="ResetTimeStamps()">Refresh</button>
+                        </div>
+                    </div>
+                </div>
+                <div class='custom_TimeStamp' id='TimeStamps'>
+                a
+                </div> 
+            </div>
+            <div class="AlertBar" id="Refill">
+                Number of pills in dispenser: <span id="NumPills">0</span><BR><BR>
+                Refill <input type='number' id="RefillNum" min='0' max='21' value='1'/> pills.<BR><BR>
+                <button onclick="AddPills();">Refill!</button>
+            </div>
+        </div>
+	</div>
+    </body>
+</html>
